@@ -1,4 +1,4 @@
-package com.example.jenkins.shared
+package docker.release
 
 class Deployer implements Serializable {
   static def deployDockerContainer(String imageTag, String containerName) {
