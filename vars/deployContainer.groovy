@@ -1,6 +1,15 @@
 #!/usr/bin/env groovy
 import docker.release.Deployer
 
-Deployer.deployDockerContainer("${containerName}", "${imageTag}")
+def call(Map config=[:]) {
+    if (config.type == "slack") {
+        echo Constants.SLACK_MESSAGE
+        echo config.message
+    } else {
+        echo Constants.EMAIL_MESSAGE
+        echo config.message
+    }
+}
+
 
 
